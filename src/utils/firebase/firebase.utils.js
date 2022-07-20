@@ -1,6 +1,6 @@
 import {initializeApp} from 'firebase/app';
 import {getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider,
-createUserWithEmailAndPassword} from 'firebase/auth';
+createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
 import {getFirestore,doc,getDoc, setDoc} from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -53,6 +53,23 @@ export const createUserDocumentFromAuth = async (userAuth, additionlInformation 
 
   return userDocRef;
 }
+
+export const signInWithEmailAndPasswordAuth = async (email, password) => {
+  console.log('kutsuttu')
+  if(!email || !password) return;
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    
+console.log(user)
+
+})
+.catch((error) => {
+  console.log(error)
+});
+}
+
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if(!email || !password) return;
