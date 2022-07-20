@@ -8,7 +8,6 @@ const SignUpForm = () => {
   const [userForm, setUserForm] = useState({displayName:'', email:'', password:'', passwordConf:''})
   const {displayName, email, password, passwordConf} = userForm;
 
-
   const handleChange = (event) => {
     const {name, value} = event.target;
 

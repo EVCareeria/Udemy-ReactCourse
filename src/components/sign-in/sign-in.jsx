@@ -14,20 +14,18 @@ const SinInForm = () => {
      await createUserDocumentFromAuth(user)
   }
 
-
   const handleChange = (event) => {
     const {name, value} = event.target;
-
     setUserForm({...userForm, [name]:value})
   }
 
   const handleSubmit = async(event) => {
     event.preventDefault();
     try {
-      if(email && password) {
-        console.log(email, password)
-        return await signInWithEmailAndPasswordAuth(email, password)
-      }
+      const user = await signInWithEmailAndPasswordAuth(
+        email,
+        password
+      );
     } catch (error) {
       switch(error.code){
         case 'auth/wrong-password':
@@ -37,7 +35,7 @@ const SinInForm = () => {
           alert('no user associated with this email');
           break;
         default:
-          console.log(error.message)
+          console.log(error)
       }
     }
     setUserForm({ email:'', password:''})
