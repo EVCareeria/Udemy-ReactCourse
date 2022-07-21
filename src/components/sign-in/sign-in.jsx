@@ -10,8 +10,7 @@ const SinInForm = () => {
   const { email, password} = userForm;
 
   const signInWithGoogle = async () => {
-    const {user} = await signInWithGooglePopup();
-     await createUserDocumentFromAuth(user)
+    await signInWithGooglePopup();
   }
 
   const handleChange = (event) => {
