@@ -12,7 +12,6 @@ const Navigation = () => {
   const {currentUser} = useContext(UserContext);
   const {showDropdown} = useContext(CartItemContext);
   
-  console.log('Nykyinen käyttäjä',currentUser)
   return(
     <>
       <div className="navigation" >
