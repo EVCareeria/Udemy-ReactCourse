@@ -5,20 +5,20 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UserProvider } from './context/user.context';
-import { ProductsProvider } from './context/products.context';
+import { CategoriesProvider } from './context/categories.context';
 import { CartItemProvider } from './context/cart-content.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ProductsProvider>
+      <CategoriesProvider>
         <UserProvider>
           <CartItemProvider>
             <App />
           </CartItemProvider>
         </UserProvider>
-      </ProductsProvider>
+      </CategoriesProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );
