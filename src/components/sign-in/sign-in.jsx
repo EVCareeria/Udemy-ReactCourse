@@ -2,7 +2,7 @@ import { useState } from "react";
 import FormInput from "../form-input/form-input";
 import {SignInContainer, ButtonsContainer, H2} from './sign-in.styles.js';
 import Button, {BUTTON_TYPE_CLASSES} from "../button/button";
-import { signInWithEmailAndPasswordAuth, signInWithGooglePopup } 
+import { signInAuthUserWithEmailAndPassword, signInWithGooglePopup } 
 from "../../utils/firebase/firebase.utils";
 
 const SinInForm = () => {
@@ -21,7 +21,7 @@ const SinInForm = () => {
   const handleSubmit = async(event) => {
     event.preventDefault();
     try {
-      const user = await signInWithEmailAndPasswordAuth(
+      const user = await signInAuthUserWithEmailAndPassword(
         email,
         password
       );
