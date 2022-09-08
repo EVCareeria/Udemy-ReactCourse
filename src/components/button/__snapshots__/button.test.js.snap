@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`button renders correctly 1`] = `
+<button
+  className="sc-bczRLJ bQaacd"
+  disabled={true}
+>
+  <div
+    className="sc-hKMtZM klHMhN"
+  />
+</button>
+`;
